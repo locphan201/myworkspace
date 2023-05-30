@@ -23,14 +23,14 @@ window.addEventListener('DOMContentLoaded', function() {
 
                 var newsItemTitle = document.createElement('h2');
                 newsItemTitle.textContent = newsItem.title;
-                newsItemTitle.id = "latest-title"
+                newsItemTitle.id = 'latest-title'
 
                 var newsItemDescription = document.createElement('p');
                 newsItemDescription.textContent = newsItem.description;
 
                 var newsItemImage = document.createElement('img');
                 newsItemImage.src = newsItem.homeimage;
-                newsItemImage.id = "latest-image"
+                newsItemImage.id = 'latest-image'
 
                 
                 newsItemContent.appendChild(newsItemTitle);

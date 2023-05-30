@@ -1,51 +1,14 @@
 {
-    "20230528-2" : {
-        "title" : "Vòng 6 - P2: Thái Nam bay cao - Sự trở lại của đôi cánh thiên thần",
-        "homeimage" : "Images/thumbnails.png",
-        "video" : "https://www.youtube.com/embed/nlIJHbcEnpE",
-        "description" : "Highlights - 28/05/2023 (13 phút)",
+    "2" : {
+        "title" : "Title 2",
+        "description" : "Desc 2",
+        "image" : "Image 1", 
         "content" : ""
     },
-    "20230528-1" : {
-        "title" : "Vòng 6 - P1: Thái Nam bay cao - Sự trở lại của đôi cánh thiên thần",
-        "homeimage" : "Images/thumbnails.png",
-        "video" : "https://www.youtube.com/embed/_vDxChuWnf8",
-        "description" : "Highlights - 28/05/2023 (12 phút)",
-        "content" : ""
-    },
-    "20230521" : {
-        "title" : "Vòng 5: Hoàng Phúc toả sáng - Bước chạy của thanh xuân.",
-        "homeimage" : "Images/thumbnails.png",
-        "video" : "https://www.youtube.com/embed/ihYgvyCXhn8", 
-        "description" : "Highlights - 21/05/2023 (15 phút)",
-        "content" : ""
-    },
-    "20230514" : {
-        "title" : "Vòng 4",
-        "homeimage" : "Images/thumbnails.png",
-        "video" : "https://www.youtube.com/embed/HlCE-y48kek", 
-        "description" : "Highlights - 14/05/2023 (13 phút)",
-        "content" : ""
-    },
-    "20220925" : {
-        "title" : "Mùa giải 2022 - Tuần 4 Tháng 9",
-        "homeimage" : "Images/thumbnails.png",
-        "video" : "https://www.youtube.com/embed/eXDQ_EqXaQk", 
-        "description" : "Highlights - 25/09/2022 (7 phút)",
-        "content" : ""
-    },
-    "20220918" : {
-        "title" : "Mùa giải 2022 - Tuần 3 Tháng 9",
-        "homeimage" : "Images/thumbnails.png",
-        "video" : "https://www.youtube.com/embed/aVt_LTZNDpw", 
-        "description" : "Highlights - 18/09/2022 (9 phút)",
-        "content" : ""
-    }, 
-    "20220911" : {
-        "title" : "Mùa giải 2022 - Tuần 2 Tháng 9",
-        "homeimage" : "Images/thumbnails.png",
-        "video" : "https://www.youtube.com/embed/8bKBFnkJiC4", 
-        "description" : "Highlights - 11/09/2022 (12 phút)",
+    "1" : {
+        "title" : "Title 1",
+        "description" : "Desc 1",
+        "image" : "Image 1", 
         "content" : ""
     }
 }
