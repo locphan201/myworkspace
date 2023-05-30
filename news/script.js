@@ -2,12 +2,13 @@ window.addEventListener('DOMContentLoaded', function() {
     var newsListElement = document.getElementById('news-list');
   
     // Fetch the news list data
-    fetch('data.json').then(function(response) {
+    fetch('https://vpmn.locphan201.repl.co/articles').then(function(response) {
         return response.json();
     }).then(function(newsData) {
         var sortedKeys = Object.keys(newsData).sort(function(a, b) {
             return parseInt(b) - parseInt(a);
         });
+        console.log(newsData)
 
         for (var i = 0; i < sortedKeys.length; i++) {
             var id = sortedKeys[i];
@@ -32,7 +33,6 @@ window.addEventListener('DOMContentLoaded', function() {
                 newsItemImage.src = newsItem.homeimage;
                 newsItemImage.id = 'latest-image'
 
-                
                 newsItemContent.appendChild(newsItemTitle);
                 newsItemContent.appendChild(newsItemDescription);
                 newsItemElement.appendChild(newsItemContent);
