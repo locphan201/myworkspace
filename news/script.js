@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', function() {
     var newsListElement = document.getElementById('news-list');
   
     // Fetch the news list data
-    fetch('https://vpmn.locphan201.repl.co/articles').then(function(response) {
+    fetch('data.json').then(function(response) {
         return response.json();
     }).then(function(newsData) {
         var sortedKeys = Object.keys(newsData).sort(function(a, b) {
