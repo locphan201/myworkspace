@@ -36,7 +36,9 @@ footer {
 }
 
 body {
+	background-color: #1a1a1a;
 	font-family: Arial, sans-serif;
+	color: #fff;
 	margin: 0;
 	padding: 0;
 }
