@@ -13,7 +13,11 @@
     margin-bottom: 10px;
     padding-left: 10px;
   }
-    
+
+#latest-news h2 {
+  color: #77B5FE;
+}
+
   #latest-news h3 {
     font-size: 18px;
   }
@@ -68,6 +72,7 @@
     
   .news-content h3 {
     margin-top: 0;
+    color: #77B5FE;
   }
     
   .news-content p {
