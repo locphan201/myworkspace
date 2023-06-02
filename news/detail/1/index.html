@@ -4,17 +4,21 @@
     <title>#1 - CLB Barcelona dưới triều đại Johan Cruyff và bài học kinh nghiệm cho bóng đá Việt Nam</title>
     <link rel="stylesheet" type="text/css" href="../styles.css">
     <link rel="stylesheet" type="text/css" href="../../../Styles/theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta charset="utf-8">
     <meta name="author" content="Phan Vĩnh Lộc">
   </head>
   <body>
-    <header>
-      <h1>Vua Phủi Miền Nam</h1>
-      <nav>
+    <header id="header">
+      <i id="drawer-toggle" class="fas fa-bars"></i>
+      <div class="centered-header">
+        <h1>Vua Phủi Miền Nam</h1>
+      </div>
+      <nav id="drawer" class="closed">
         <ul>
-          <li><a href="../../../index.html">Trang chủ</a></li>
-          <li><a href="../../index.html">Bản tin</a></li>
-          <li><a href="../../../highlights/index.html">Highlights</a></li>
+          <li onclick="redirectTo('../../../index.html')">Trang chủ</li>
+          <li onclick="redirectTo('../../index.html')">Bản tin</li>
+          <li onclick="redirectTo('../../../highlights/index.html')">Highlights</li>
       </ul>
       </nav>
     </header>
@@ -85,5 +89,6 @@
       <p style="text-align: center;">&copy; Vua Phủi Miền Nam 2023</p>
     </footer>
 
+    <script src="../../Styles/script.js"></script>
   </body>
 </html>

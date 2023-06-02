@@ -4,32 +4,27 @@
   <title>Trang chủ - Vua Phủi Miền Nam</title>
   <link rel="stylesheet" type="text/css" href="Styles/theme.css">
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <meta charset="UTF-8">
   <meta property="og:title" content="Vua Phủi Miền Nam">
   <meta property="og:image" content="highlights/Images/thumbnails.png">
   <!-- <link rel="icon" href="favicon.ico" type="highlights/Images/thumbnails.png"> -->
 </head>
 <body>
-  <header>
-    <h1>Vua Phủi Miền Nam</h1>
-    <nav>
+  <header id="header">
+    <i id="drawer-toggle" class="fas fa-bars"></i>
+    <div class="centered-header">
+      <h1>Vua Phủi Miền Nam</h1>
+    </div>
+    <nav id="drawer" class="closed">
       <ul>
-          <li><a href="index.html">Trang chủ</a></li>
-          <li><a href="news/index.html">Bản tin</a></li>
-          <li><a href="highlights/index.html">Highlights</a></li>
+        <li onclick="redirectTo('index.html')">Trang chủ</li>
+        <li onclick="redirectTo('news/index.html')">Bản tin</li>
+        <li onclick="redirectTo('highlights/index.html')">Highlights</li>
       </ul>
     </nav>
+    
   </header>
-
-  <nav style="background-color:#34394c;text-align:center;">
-    <ul style="display: grid; grid-template-columns: repeat(5, 1fr); align-content: center;">
-      <li class="section" href="#welcome">Chào mừng</li>
-      <li class="section" href="#history">Lịch sử</li>
-      <li class="section" href="#about">Về chúng tôi</li>
-      <li class="section" href="#guide">Hướng dẫn</li>
-      <li class="section" href="#contact">Liên hệ</li>
-    </ul>
-  </nav>
 
   <main>
     <div class="container">
@@ -42,12 +37,12 @@
         <p>Đội bóng của lớp 12A11 không chỉ là một đội bóng trường học, mà còn là biểu tượng của sự đoàn kết, tinh thần thể thao và sự cống hiến. Với những giờ tập luyện và những trận đấu đầy cảm xúc, đội bóng đã tạo nên những kỷ niệm đáng nhớ và gắn bó vững chắc giữa các thành viên.</p>
       </section>
     
-      <section id="history" style="display:none;">
+      <section id="history">
         <h2>Lịch sử</h2>
         <p>Đội bóng lớp 12A11 được thành lập vào năm 2019 với sự tham gia của các học sinh trung học cấp 3. Từ những ngày đầu thành lập, đội bóng đã trải qua nhiều buổi tập luyện và cùng nhau đặt mục tiêu cao cả. Với sự cống hiến và nỗ lực không ngừng, đội bóng đã tiến bộ rõ rệt và trở thành một đối thủ đáng gờm trong các giải đấu của trường. Qua nhiều trận đấu và giải đấu, đội bóng 12A11 đã gặt hái được nhiều thành công và ghi dấu ấn trong lịch sử của trường. Bên cạnh đó, các thành viên trong đội cũng rèn luyện các kỹ năng quan trọng như lãnh đạo, sự tự tin và khả năng làm việc nhóm.</p>
       </section>
     
-      <section id="about" style="display:none;">
+      <section id="about">
         <div class="team-members">
           <h2>Về chúng tôi</h2>
           <p>Đội bóng lớp 12A11 không chỉ là một đội bóng trường học, mà còn là biểu tượng của sự đoàn kết, tinh thần thể thao và sự cống hiến. Với những giờ tập luyện và những trận đấu đầy cảm xúc, đội bóng đã tạo nên những kỷ niệm đáng nhớ và gắn bó vững chắc giữa các thành viên. Chúng tôi luôn hỗ trợ và khích lệ lẫn nhau trong quá trình thi đấu và tập luyện, tạo ra một gia đình thứ hai đầy ấm áp và đoàn kết.</p>
@@ -77,7 +72,7 @@
         </div>
       </section>
     
-      <section id="guide" style="display:none;">
+      <section id="guide">
         <div class="guide">
           <h2>Guide - How to Use Our Website</h2>
           <div class="guide-item">
@@ -95,7 +90,7 @@
         </div>
       </section>
 
-      <section id="contact" style="display:none;">
+      <section id="contact">
         <p>Nếu bạn quan tâm đến đội bóng lớp 12A11 hoặc muốn tham gia cùng chúng tôi, hãy liên hệ với chúng tôi tại:</p>
         <p>Email: info@12A11football.com</p>
         <p>Số điện thoại: 0123456789</p>
@@ -112,5 +107,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="Styles/script.js"></script>
 </body>
 </html>
