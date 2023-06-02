@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 newsItemContent.classList.add('news-content')
         
                 var newsItemTitle = document.createElement('h3')
-                newsItemTitle.textContent = newsItem.title
+                newsItemTitle.textContent = '#' + id + ' - ' + newsItem.title
         
                 newsItemContent.appendChild(newsItemTitle)
                 newsItemContent.appendChild(newsItemDescription)

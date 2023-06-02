@@ -1,28 +1,12 @@
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-}
-  
-#latest-news, #other-news {
-  margin-top: 20px;
-}
-  
-#latest-news h2, #other-news h2 {
-  font-size: 20px;
+ #latest-news h2, #other-news h2 {
   margin-bottom: 10px;
   padding-left: 10px;
 }
-  
-#latest-news h2 {
-  color: #77B5FE;
+
+#latest-news h2, #latest-news p {
+  padding-left: 20px;
 }
 
-#latest-news h3 {
-  font-size: 18px;
-  color: #77B5FE;
-}
-  
 #latest-news img {
   display: block;
   max-width: 800px;
@@ -30,11 +14,7 @@
   height: auto;
   margin: 15px auto;
   padding: auto;
-}
-  
-#latest-news p {
-  margin-bottom: 10px;
-  padding-left: 10px;
+  border-radius: 10px;
 }
   
 #other-news a {
@@ -42,31 +22,37 @@
 }
   
 #latest-news {
+  margin: 10px 10px;
   border: 1px solid #ccc;
   transition: background-color 0.3s;
+  border-radius: 20px;
+  background-color: rgb(240, 240, 240);;
 }
 
 #latest-news:hover {
-  background-color: #f0f0f0;
+  background-color: rgb(200, 200, 200);
 }
 
 .news-item {
   display: flex;
   align-items: center;
   padding: 10px;
-  margin-bottom: 20px;
+  margin: 10px 50px;
   border: 1px solid #ccc;
   transition: background-color 0.3s;
+  border-radius: 10px;
+  background-color: rgb(240, 240, 240);
 }
   
 .news-item:hover {
-  background-color: #f0f0f0;
+  background-color: rgb(200, 200, 200);
 }
   
 .news-item img {
   width: 150px;
   height: auto;
   margin-right: 10px;
+  border-radius: 10px;
 }
   
 .news-content {

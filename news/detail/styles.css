@@ -40,3 +40,11 @@ img {
     font-weight: bold;
     color: #ffa500;
 }
+
+.author {
+    color:#fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
