@@ -3,13 +3,13 @@ header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 30px;
+	padding: 20px;
   border-bottom: 3px solid #fdc52c;
 }
   
 footer {
 	background-color: rgb(24, 23, 51);
-	padding: 30px;
+	padding: 20px;
 	text-align: center;
   border-top: 3px solid #fdc52c;
 }
@@ -21,7 +21,7 @@ body {
 }
 
 main {
-  background-image: linear-gradient(0deg, #004d98 0,	#004d98 10%,rgba(200,30,50,1));
+  background-image: linear-gradient(-45deg, #004d98,rgba(200,30,50));
 	padding: 30px;
 }
 
