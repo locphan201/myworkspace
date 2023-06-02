@@ -8,7 +8,34 @@ window.addEventListener('DOMContentLoaded', function() {
         var sortedKeys = Object.keys(newsData).sort(function(a, b) {
             return parseInt(b) - parseInt(a)
         })
-        console.log(newsData)
+
+        var latest_id = sortedKeys[0]
+        var latestNewsItem = newsData[latest_id]
+
+        var latestNewsItemElement = document.createElement('a')
+        latestNewsItemElement.href = 'detail/' + latest_id + '/index.html'
+
+        var latestNewsItemDescription = document.createElement('p')
+        latestNewsItemDescription.textContent = latestNewsItem.author + ' - ' + latestNewsItem.date
+
+        var latestNewsItemImage = document.createElement('img')
+        latestNewsItemImage.src = latestNewsItem.image
+
+        var latestNewsLatest = document.getElementById('latest-news')
+
+        var latestNewsItemContent = document.createElement('div')
+
+        var latestNewsItemTitle = document.createElement('h2')
+        latestNewsItemTitle.textContent = '#' + latest_id + ' - ' + latestNewsItem.title
+        latestNewsItemTitle.id = 'latest-title'
+
+        latestNewsItemImage.id = 'latest-image'
+
+        latestNewsItemContent.appendChild(latestNewsItemTitle)
+        latestNewsItemContent.appendChild(latestNewsItemDescription)
+        latestNewsItemElement.appendChild(latestNewsItemContent)
+        latestNewsItemElement.appendChild(latestNewsItemImage)
+        latestNewsLatest.appendChild(latestNewsItemElement)
 
         for (var i = 0; i < sortedKeys.length; i++) {
             var id = sortedKeys[i]
@@ -23,38 +50,19 @@ window.addEventListener('DOMContentLoaded', function() {
             var newsItemImage = document.createElement('img')
             newsItemImage.src = newsItem.image
 
-            if (i == 0) {
-                var newsLatest = document.getElementById('latest-news')
-
-                var newsItemContent = document.createElement('div')
-
-                var newsItemTitle = document.createElement('h2')
-                newsItemTitle.textContent = '#' + id + ' - ' +newsItem.title
-                newsItemTitle.id = 'latest-title'
-
-                newsItemImage.id = 'latest-image'
-
-                newsItemContent.appendChild(newsItemTitle)
-                newsItemContent.appendChild(newsItemDescription)
-                newsItemElement.appendChild(newsItemContent)
-                newsItemElement.appendChild(newsItemImage)
-                newsLatest.appendChild(newsItemElement)
-
-            } else {
-                newsItemElement.classList.add('news-item')
+            newsItemElement.classList.add('news-item')
         
-                var newsItemContent = document.createElement('div')
-                newsItemContent.classList.add('news-content')
+            var newsItemContent = document.createElement('div')
+            newsItemContent.classList.add('news-content')
         
-                var newsItemTitle = document.createElement('h3')
-                newsItemTitle.textContent = '#' + id + ' - ' + newsItem.title
+            var newsItemTitle = document.createElement('h3')
+            newsItemTitle.textContent = '#' + id + ' - ' + newsItem.title
         
-                newsItemContent.appendChild(newsItemTitle)
-                newsItemContent.appendChild(newsItemDescription)
-                newsItemElement.appendChild(newsItemImage)
-                newsItemElement.appendChild(newsItemContent)
-                newsListElement.appendChild(newsItemElement)
-            }
+            newsItemContent.appendChild(newsItemTitle)
+            newsItemContent.appendChild(newsItemDescription)
+            newsItemElement.appendChild(newsItemImage)
+            newsItemElement.appendChild(newsItemContent)
+            newsListElement.appendChild(newsItemElement)
         }
     }).catch(function(error) {
         console.error('Error loading news list:', error)
