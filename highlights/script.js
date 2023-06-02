@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 newsItemDescription.textContent = newsItem.description;
 
                 var newsItemImage = document.createElement('img');
-                newsItemImage.src = newsItem.homeimage;
+                newsItemImage.src = newsItem.image;
                 newsItemImage.id = 'latest-image'
 
                 
@@ -45,7 +45,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 newsItemElement.classList.add('news-item');
         
                 var newsItemImage = document.createElement('img');
-                newsItemImage.src = newsItem.homeimage;
+                newsItemImage.src = newsItem.image;
         
                 var newsItemContent = document.createElement('div');
                 newsItemContent.classList.add('news-content');
