@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bản tin - Vua Phủi Miền Nam</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Cầu thủ</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" type="text/css" href="../Styles/theme.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
@@ -15,26 +15,24 @@
     <nav id="drawer" class="closed">
       <ul>
         <li onclick="redirectTo('../index.html')">Trang chủ</li>
-        <li onclick="redirectTo('index.html')">Bản tin</li>
+        <li onclick="redirectTo('../news/index.html')">Bản tin</li>
         <li onclick="redirectTo('../highlights/index.html')">Highlights</li>
-        <li onclick="redirectTo('../players/index.html')">Thành viên</li>
+        <li onclick="redirectTo('index.html')">Thành viên</li>
       </ul>
     </nav>
   </header>
 
   <main>
     <div class="container">
-      <div id="latest-news">
-        <a id="latest-link" href="">
-          <h2 id="latest-title"></h2>
-          <p id="latest-desc"></p>
-          <img id="latest-image" src="">
-        </a>
-      </div>
-      
-      <div id="other-news">
-        <h2>Bản tin khác</h2>
-        <div id="news-list"></div>
+        <div id="player-list"></div>
+
+        <div class="player-details">
+          <div id="player-info"></div>
+        </div>
+
+        <div class="progress-bar">
+          <h2>Chỉ số</h2>
+          <div id="player-speed" class="progress-bar-fill"></div>
       </div>
     </div>
   </main>
