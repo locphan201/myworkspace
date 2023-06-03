@@ -63,8 +63,11 @@ var videoListElement = document.getElementById('video-list');
 var videoList = ''
 for (var i = 0; i < sortedKeys.length; i++) {
     var id = sortedKeys[i];
-
-    videoList += '<div onclick="myFunction(this)" data-id="' + id + '" class="video-item">'
+    if (i == 0) {
+        videoList += '<div onclick="myFunction(this)" data-id="' + id + '" class="video-item select">'
+    } else {
+        videoList += '<div onclick="myFunction(this)" data-id="' + id + '" class="video-item">'
+    }
     videoList += '<img src="' + videoData[id].image + '">';
     videoList += '<div class="video-content">'
     videoList += '<h3>'+ videoData[id].title + '</h3>'
@@ -76,6 +79,10 @@ function myFunction(element) {
     var id = element.getAttribute("data-id");
     setCurrentVideo(id)
 
+    var video = document.getElementsByClassName('video-item select')[0]
+    video.className = 'video-item'
+    element.className = 'video-item select'
+    
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
