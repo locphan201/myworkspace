@@ -25,11 +25,7 @@ window.addEventListener('DOMContentLoaded', function() {
         var newsListMobile = ''
         for (var i = 0; i < sortedKeys.length; i++) {
             var id = sortedKeys[i]
-            // newsListPC += '<a href="detail/' + id + '/index.html" class="news-item pc-style">'
-            // newsListPC += '<img src="' + newsData[id].image + '"><div class="news-content">'
-            // newsListPC += '<h3>#' + id + ' - ' + newsData[id].title + '</h3>'
-            // newsListPC += '<p>' + newsData[id].author + ' - ' + newsData[id].date + '</p></div></a>'
-        
+            
             newsListMobile += '<div class="news-item"><a href="detail/' + id + '/index.html">'
             newsListMobile += '<h3>#' + id + ' - ' + newsData[id].title + '</h3>'
             newsListMobile += '<p>' + newsData[id].author + ' - ' + newsData[id].date + '</p>'

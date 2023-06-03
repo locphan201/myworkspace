@@ -45,8 +45,9 @@ footer {
 
 main {
   background-image: linear-gradient(-45deg, #004d98,rgba(200,30,50));
-  padding: 14% 5%;
-  padding-bottom: 4%;
+  padding: 0 5%;
+  padding-top: 120px;
+  padding-bottom: 43px;
 }
 
 .container {
@@ -136,6 +137,7 @@ header, footer, #drawer {
   footer p {font-size: 10px;}
   #header, footer {padding: 35px 0;}
   #drawer {top: 130px;left: -40%;width: 40%;}
+  main {padding-top: 160px; padding-bottom: 35px;}
   #drawer li,#drawer ul {padding: 25px;}
   #drawer-toggle {top: 30px;left: 30px;}
 }
