@@ -55,7 +55,7 @@ header h1 {
   
 #drawer {
 	position: fixed;
-	top: 72px;
+	top: 82px;
 	left: -250px;
 	width: 250px;
 	height: 100%;
@@ -67,7 +67,7 @@ header h1 {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 2% 0;
+  padding: 25px 0;
   border-bottom: 5px solid #fdc52c;
   align-items: center;
 }
@@ -89,9 +89,9 @@ header h1 {
 }
   
 #drawer-toggle {
-	position: absolute;
-	top: 17.5px;
-	left: 10px;
+	position: fixed;
+	top: 23px;
+	left: 23px;
 	font-size: 32px;
 	cursor: pointer;
 }
@@ -113,53 +113,17 @@ header, footer, #drawer {
   background-color: rgb(24, 23, 51);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
+  h1 {font-size: 56px;}  
+  h2,header h1,#drawer-toggle {font-size: 48px;}
+  h3,#drawer li {font-size: 40px;}
+  p {font-size: 24px;}
+  #header {padding: 35px 0;}
+  #drawer {top: 130px;left: -40%;width: 40%;}
+  #drawer li,#drawer ul {padding: 25px;}
+  #drawer-toggle {top: 30px;left: 30px;}
+}
+
+/* @media (min-width: 1024px) {
   
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  h1 {
-    font-size: 56px;
-  }
-    
-  h2 {
-    font-size: 48px;
-  }
-    
-  h3 {
-    font-size: 40px;
-  }
-    
-  p {
-    font-size: 24px;
-  }
-
-  header h1 {
-    font-size: 48px;
-  }
-    
-  #drawer {
-    top: 119px;
-    left: -40%;
-    width: 40%;
-  }
-    
-  #drawer ul {
-    padding: 25px;
-  }
-    
-  #drawer li {
-    font-size: 40px;
-    padding: 25px;
-  }
-    
-  #drawer-toggle {
-    top: 33.6px;
-    left: 33.6px;
-    font-size: 48px;
-  }
-}
-
-@media (min-width: 1024px) {
-  
-}
+} */
