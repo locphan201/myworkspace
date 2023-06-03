@@ -34,14 +34,9 @@
   text-align: center;
 }
 
-a {
-  font-size: 17px;
-}
-
 p {
   text-align: justify;
 }
-
 
 .team-member {
   text-align: center;
@@ -65,5 +60,10 @@ p {
   color: #888;
 }
 
-
+@media (max-width: 1023px) {
+  .get-started-button a {
+    padding: 25px 50px;
+    font-size: 32px;
+  }
+}
 

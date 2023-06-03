@@ -21,15 +21,21 @@ window.addEventListener('DOMContentLoaded', function() {
         latestNewsImage.src = newsData[latest_id].image
 
         var newsListElement = document.getElementById('news-list')
-        var newsList = ''
+        var newsListPC = ''
+        var newsListMobile = ''
         for (var i = 0; i < sortedKeys.length; i++) {
             var id = sortedKeys[i]
-            newsList += '<a href="detail/' + id + '/index.html" class="news-item">'
-            newsList += '<img src="' + newsData[id].image + '"><div class="news-content">'
-            newsList += '<h3>#' + id + ' - ' + newsData[id].title + '</h3>'
-            newsList += '<p>' + newsData[id].author + ' - ' + newsData[id].date + '</p></div></a>'
+            // newsListPC += '<a href="detail/' + id + '/index.html" class="news-item pc-style">'
+            // newsListPC += '<img src="' + newsData[id].image + '"><div class="news-content">'
+            // newsListPC += '<h3>#' + id + ' - ' + newsData[id].title + '</h3>'
+            // newsListPC += '<p>' + newsData[id].author + ' - ' + newsData[id].date + '</p></div></a>'
+        
+            newsListMobile += '<div class="news-item"><a href="detail/' + id + '/index.html">'
+            newsListMobile += '<h3>#' + id + ' - ' + newsData[id].title + '</h3>'
+            newsListMobile += '<p>' + newsData[id].author + ' - ' + newsData[id].date + '</p>'
+            newsListMobile += '<img src="' + newsData[id].image + '"></a></div>'
         }
-        newsListElement.innerHTML = newsList
+        newsListElement.innerHTML = newsListPC + newsListMobile
     }).catch(function(error) {
         console.error('Error loading news list:', error)
     })

@@ -22,15 +22,25 @@ p {
   color: #000;
 }
 
+a {
+  font-size: 17px;
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover, a:focus {
+  outline: none;
+}
+
 body {
 	font-family: Arial, sans-serif;
 	margin: 0;
 }
 
 footer {
-	padding: 2% 0%;
+	padding: 25px 0;
 	text-align: center;
-  border-top: 3px solid #fdc52c;
+  border-top: 5px solid #fdc52c;
 }
 
 main {
@@ -109,6 +119,10 @@ nav ul li:hover {
   color: #fdc52c;
 }
 
+footer p {
+  text-align: center;
+}
+
 header, footer, #drawer {
   background-color: rgb(24, 23, 51);
 }
@@ -117,13 +131,11 @@ header, footer, #drawer {
   h1 {font-size: 56px;}  
   h2,header h1,#drawer-toggle {font-size: 48px;}
   h3,#drawer li {font-size: 40px;}
+  a {font-size: 32px;}
   p {font-size: 24px;}
-  #header {padding: 35px 0;}
+  footer p {font-size: 10px;}
+  #header, footer {padding: 35px 0;}
   #drawer {top: 130px;left: -40%;width: 40%;}
   #drawer li,#drawer ul {padding: 25px;}
   #drawer-toggle {top: 30px;left: 30px;}
 }
-
-/* @media (min-width: 1024px) {
-  
-} */

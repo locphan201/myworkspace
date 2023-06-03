@@ -9,8 +9,7 @@
 
 #latest-news img {
   display: block;
-  max-width: 800px;
-  width: 100%;
+  width: 90%;
   height: auto;
   margin: 15px auto;
   padding: auto;
@@ -22,11 +21,12 @@
 }
   
 #latest-news {
-  margin: 10px 10px;
+  width: 100%;
+  margin: 10px auto;
   border: 1px solid #ccc;
   transition: background-color 0.3s;
   border-radius: 20px;
-  background-color: rgb(240, 240, 240);;
+  background-color: rgb(240, 240, 240);
 }
 
 #latest-news:hover {
@@ -34,13 +34,11 @@
 }
 
 .news-item {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  margin: 10px;
+  width: 95%;
+  margin: 10px auto;
   border: 1px solid #ccc;
   transition: background-color 0.3s;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: rgb(240, 240, 240);
 }
   
@@ -49,29 +47,33 @@
 }
   
 .news-item img {
-  width: 150px;
+  display: block;
+  width: 75%;
   height: auto;
-  margin-right: 10px;
+  margin: 15px auto;
+  padding: auto;
   border-radius: 10px;
 }
   
-.news-content {
-  flex-grow: 1;
-}
-  
-.news-content h3 {
-  margin-top: 0;
-}
-  
-.news-content p {
-  margin-bottom: 0;
+.news-item h3, .news-item p {
+  margin: 0 5;
+  margin-top: 5px;
+  padding: 0px;
+  padding-left: 20px;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+@media (max-width: 1023px) {
+  #latest-news h2 {
+    font-size: 32px;
+  }
+  #latest-news p {
+    font-size: 16px;
+  }
 
-a:hover, a:focus {
-  outline: none;
+  .news-item h3 {
+    font-size: 28px;
+  }
+  .news-item p {
+    font-size: 16px;
+  }
 }
