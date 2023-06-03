@@ -4,119 +4,136 @@ var players = {
         position: "",
         age: 22,
         nationality: "Việt Nam",
-        appearance: 3
+        appearance: 3,
+        speed: 70
     },
     "2": {
         name: "Nguyễn Hoàng Phúc",
         position: "",
         age: 22,
         nationality: "Việt Nam",
-        appearance: 3
+        appearance: 3,
+        speed: 90
     },
     "3": {
         name: "Nguyễn Trường Xuân Thịnh",
         position: "",
         age: 22,
         nationality: "Việt Nam",
-        appearance: 3
+        appearance: 3,
+        speed: 90
     },
     "4": {
         name: "Trần Công Nam",
         position: "",
         age: 22,
         nationality: "Việt Nam",
-        appearance: 3
+        appearance: 3,
+        speed: 50
     },
     "5": {
         name: "Trần Quốc Phi",
         position: "",
         age: 22,
         nationality: "Việt Nam",
-        appearance: 3
+        appearance: 3,
+        speed: 60
     },
     "5": {
         name: "Nguyễn Đăng Trình",
         position: "",
         age: 22,
         nationality: "Việt Nam",
-        appearance: 3
+        appearance: 3,
+        speed: 90
     },
     "6": {
         name: "Huỳnh Huy Hoàng",
         position: "",
         age: 22,
         nationality: "Việt Nam",
-        appearance: 3
+        appearance: 3,
+        speed: 80
     },
     "7": {
         name: "Nguyễn Thế Phong",
         position: "",
         age: 22,
         nationality: "Việt Nam",
-        appearance: 3
+        appearance: 3,
+        speed: 85
     },
     "8": {
         name: "Nguyễn Anh Tuấn",
         position: "",
         age: 22,
         nationality: "Việt Nam",
-        appearance: 3
+        appearance: 3,
+        speed: 40
     },
     "9": {
         name: "Hậu Phúc",
         position: "",
         age: 22,
         nationality: "Việt Nam",
-        appearance: 3
+        appearance: 3,
+        speed: 70
     },
     "10": {
         name: "Trọng Thắng",
         position: "",
         age: 22,
         nationality: "Việt Nam",
-        appearance: 3
+        appearance: 3,
+        speed: 70
     },
     "11": {
         name: "Huy Nguyễn",
         position: "",
         age: 22,
         nationality: "Việt Nam",
-        appearance: 3
+        appearance: 3,
+        speed: 70
     },
     "12": {
         name: "Hưng Nguyễn",
         position: "",
         age: 22,
         nationality: "Việt Nam",
-        appearance: 3
+        appearance: 3,
+        speed: 85
     },
     "13": {
         name: "Nguyễn Bá Việt Phúc",
         position: "",
         age: 22,
         nationality: "Việt Nam",
-        appearance: 3
+        appearance: 3,
+        speed: 60
     },
     "14": {
         name: "Khánh Nguyễn",
         position: "",
         age: 22,
         nationality: "Việt Nam",
-        appearance: 3
+        appearance: 3,
+        speed: 60
     },
     "15": {
         name: "Lâm Duy Niên",
         position: "",
         age: 22,
         nationality: "Mỹ",
-        appearance: 2
+        appearance: 2,
+        speed: 70
     },
     "16": {
         name: "Võ Gia Huy",
         position: "",
         age: 22,
         nationality: "Việt Nam",
-        appearance: 1
+        appearance: 1,
+        speed: 80
     },
 }
 
@@ -142,8 +159,8 @@ function showPlayerInfo(id) {
     playerInfoDiv.innerHTML += "<p><strong>Số trận:</strong> " + playerInfo.appearance + "</p>"
 
     var playerSpeed = document.getElementById("player-speed")
-    playerSpeed.style.width = "70%"
-    playerSpeed.innerHTML = 70
+    playerSpeed.style.width = playerInfo.speed + "%"
+    playerSpeed.innerHTML = playerInfo.speed
 
     var listItems = document.querySelectorAll("#player-list ul li");
     for (var i = 0; i < listItems.length; i++) {
@@ -151,5 +168,7 @@ function showPlayerInfo(id) {
     }
 
     listItems[parseInt(id)-1].classList.add("selected");
-
+    
+    var playerInfoElement = document.getElementsByClassName('player-details')[0]
+    playerInfoElement.className += 'show'
 }
