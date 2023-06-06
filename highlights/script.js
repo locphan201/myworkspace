@@ -1,4 +1,10 @@
 videoData = {
+    "20230604" : {
+        title : "Vòng 7: Đại tiệc bóng đá tấn công",
+        image : "Images/thumbnails.png",
+        video : "Uk2nWTBdMrs",
+        description : "Highlights - 04/06/2023 (15 phút)"
+    },
     "20230528-2" : {
         title : "Vòng 6 - P2: Thái Nam bay cao - Sự trở lại của đôi cánh thiên thần",
         image : "Images/thumbnails.png",
