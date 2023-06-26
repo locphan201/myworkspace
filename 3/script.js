@@ -239,5 +239,3 @@ function changeVideo(sect, lesson) {
     behavior: 'smooth'
   });
 }
-
-changeVideo(0, 0)
