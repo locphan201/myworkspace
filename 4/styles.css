@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(0deg, rgb(0, 76, 153),rgb(167, 0, 66));;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+header div {
+  width: 20%;
+}
+
+header div h1, header div h2 {
+  color: rgb(255, 238, 0);
+}
+
+header div h1 {
+  margin: 0px 20px;
+  text-align: right;
+}
+
+header div h2 {
+  margin: 0px 20px;
+  text-align: right;
+}
+
+header nav {
+  width: 60%;
+  margin: 0 5%;
+  padding: 10px;
+  background-color: rgb(237, 188, 0);
+  border-radius: 50px;
+  text-align: center;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+header nav ul li {
+  margin: 0 10px;
+  padding: 5px;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.selected {
+  background-color: black;
+  border-radius: 50px;
+  
+}
+
+.selected a {
+  color: white
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+}
