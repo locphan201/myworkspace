@@ -19,4 +19,9 @@
         "type" : "Sport Website",
         "api" : "YES"
     }
+    "5" : {
+        "title": "Simple Game",
+        "type" : "Game",
+        "api" : "NO"
+    }
 }
