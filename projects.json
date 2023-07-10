@@ -22,8 +22,8 @@
     "4" : {
         "title": "Vua Phủi Miền Nam ver 2",
         "type" : "Sport Website",
-        "status" : "ON GOING"
-    },
+        "api" : "YES"
+    }
     "5" : {
         "title": "Simple Game",
         "type" : "Game",
