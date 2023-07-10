@@ -1,27 +1,48 @@
 {
+    "0" : {
+        "title": "My Portfolio",
+        "type" : "Information",
+        "status" : "ON GOING"
+    },
     "1" : {
         "title": "Vua Phủi Miền Nam ver 1",
         "type" : "Sport Website",
-        "api" : "YES"
+        "status" : "TERMINATED"
     },
     "2" : {
         "title": "Heart",
         "type" : "Animation",
-        "api" : "NO"
+        "status" : "DONE"
     },
     "3" : {
         "title": "Python Basics",
         "type" : "Education",
-        "api" : "YES"
+        "status" : "DONE"
     },
     "4" : {
         "title": "Vua Phủi Miền Nam ver 2",
         "type" : "Sport Website",
-        "api" : "YES"
-    }
+        "status" : "ON GOING"
+    },
     "5" : {
         "title": "Simple Game",
         "type" : "Game",
-        "api" : "NO"
+        "status" : "DONE"
+    },
+    "6" : {
+        "title": "Simple Online Database",
+        "type" : "Education",
+        "status" : "DONE"
+    },
+    "7" : {
+        "title": "Analyze CSV",
+        "type" : "Automation",
+        "status" : "ON GOING"
+    },
+    "8" : {
+        "title": "Tic Tac Toe",
+        "type" : "Game",
+        "status" : "DONE"
     }
+
 }

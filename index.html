@@ -43,14 +43,12 @@
     tr:hover {
       background-color: rgb(220, 220, 220);
     }
-
   </style>
 </head>
 <body>
   <header>
-      <h1 style="width:80%;text-align:left;padding-left:50px;">My Work Space</h1>
-      <h1 style="width:10%;font-size:18px;">#No. Projects: <span id="projects" style="color:red"></span></h1>
-      <h1 style="width:10%;font-size:18px;">Status: <span id="status"></span></h1>
+      <h1 style="width:85%;text-align:left;padding-left:50px;">My Work Space</h1>
+      <h1 style="width:15%;font-size:18px;">#No. Projects: <span id="projects" style="color:red"></span></h1>
   </header>
 
   <main>
@@ -59,7 +57,7 @@
         <th>No.</th>
         <th>Project Name</th>
         <th>Type</th>
-        <th>API</th>
+        <th>Status</th>
       </tr>
     </table>
   </main>
@@ -81,10 +79,12 @@
             rows += `<tr style="cursor:pointer;" onclick="directToProject(${keys[i]})"><td>${keys[i]}</td>`
             rows += `<td>${data[keys[i]].title}</td>`
             rows += `<td>${data[keys[i]].type}</td>`
-            if (data[keys[i]].api == 'NO') {
-              rows += `<td style="color:red">${data[keys[i]].api}</td></tr>`
+            if (data[keys[i]].status == 'TERMINATED') {
+              rows += `<td style="color:red">${data[keys[i]].status}</td></tr>`
+            } else if (data[keys[i]].status == 'ON GOING') {
+              rows += `<td style="color:#B58B00">${data[keys[i]].status}</td></tr>`
             } else {
-              rows += `<td style="color:green">${data[keys[i]].api}</td></tr>`
+              rows += `<td style="color:green">${data[keys[i]].status}</td></tr>`
             }
           }
 
@@ -95,18 +95,14 @@
         });
     }
 
-    function checkDBStatus() {     
-      var status = document.getElementById('status')
+    function initDB() {     
       fetch('https://myworkspace.locphan201.repl.co/')
         .then(response => response.json())
         .then(data => {
-          status.textContent = 200
-          status.style = "color:green"
+          
         })
         .catch(error => {
-          status.textContent = 404
-          status.style = "color:red"
-          setTimeout(checkDBStatus, 2000);
+
         });
     }
 
@@ -115,7 +111,7 @@
     }
 
     countProjects()
-    checkDBStatus()
+    initDB()
   </script>
 </body>
 </html>

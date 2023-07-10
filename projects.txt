@@ -2,3 +2,7 @@
 2 - Heart
 3 - Study Python
 4 - Vua Phui Mien Nam version 2
+5 - Simple Game
+6 - Simple Online Database
+7 - Analyze CSV
+8 - Tic Tac Toe

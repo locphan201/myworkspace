@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    background-color: #222222;
+    color: white;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: calc((100vh - 600px) / 2);
+}
+
+#play-area {
+    border: 2px solid #000000;
+}
+
+#myImage {
+    width: 250px;
+    height: 250px;
+}
+
+button {
+    width: 80%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}

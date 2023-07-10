@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS foo;
+CREATE TABLE IF NOT EXISTS foo (id unique, col1, col2);
+INSERT INTO foo (id, col1, col2) VALUES (1, "s1", 11);
+INSERT INTO foo (id, col1, col2) VALUES (2, "s2", 22);
+SELECT * FROM foo;

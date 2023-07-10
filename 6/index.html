@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Localhost</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000000;
+      color: white;
+      overflow: hidden;
+    }
+
+    header {
+      display: flex;
+      font-weight:bold;
+    }
+
+    header h1 {
+      margin: 0;
+      padding: 20px 10px;
+      font-size: 24px;
+    }
+
+    table {
+      width: 100%;
+      height: calc(100vh - 60px);
+      border-collapse: collapse;
+      background-color: rgb(240, 240, 240);
+      margin-bottom: 20px;
+    }
+
+    th {
+      background-color: #333333;
+      color: #ffffff;
+      padding: 10px;
+      text-align: left;
+    }
+
+    td {
+      padding: 10px;
+      color: black;
+    }
+
+    tr:hover {
+      background-color: rgb(220, 220, 220);
+    }
+
+    .container {
+      margin: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    label {
+      font-size: 18px;
+    }
+
+    textarea {
+      padding: 5px;
+      font-size: 16px;
+      width: 100%;
+      height: 50vh;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <label>Database Status: <span id="no-table">0 tables</span></label>
+      <table id="data-table">
+      </table>
+    </div>
+
+    <form method="POST" onsubmit="execQueries(event)">
+      <label for="input_string">Enter a queries:</label>
+      <input type="submit" value="Submit">
+      <textarea id="input_string" name="input_string" required></textarea>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
