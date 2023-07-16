@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Rules - Vua Phui Mien Nam</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>VUA PHUI</h1>
+      <h2>MIEN NAM</h2>
+    </div>
+    
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li class="selected"><a href="rules.html">Rules</a></li>
+      </ul>
+    </nav>
+    <div></div>
+  </header>
+
+  <main>
+    <div></div>
+    <div id="container">
+      <div id="tab0" class="tab" onclick="showTab('tab0')">
+        <h2>Cơ bản</h2>
+        <div class="tab-content">
+          <p></p>
+        </div>
+      </div>
+
+      <div id="tab1" class="tab" onclick="showTab('tab1')">
+        <h2>Vote</h2>
+        <div class="tab-content">
+          <p>1. Các trường hợp bình chọn “Không tham gia” trước khi Hội đồng đặt sân bãi nhưng sau khi Hội đồng đặt sân, thành viên có nhu cầu tham gia thì báo với hội đồng</p>
+          <p>2. Các trường hợp đã bình chọn “tham gia” và giữ nguyên lựa chọn tính từ thời điểm Hội đồng đăng bài điểm danh cho đến thời điểm Hội đồng đăng bài thông báo đã đặt thành công sân bãi, nhưng đến trước ngày thi đấu thì thành viên có nhu cầu hủy bỏ tham gia thì báo với hội đồng</p>
+          <p>3. Khuyến khích ae báo càng sớm càng tốt và trễ nhất là không quá 12 giờ khuya trước ngày thi đấu (áp dụng đối với mục 1,2).</p>
+          <p>4. Các trường hợp mời thêm bạn bè tham gia nhưng không thông qua Hội đồng tính từ thời điểm Hội đồng đã đăng bài thông báo đã đặt sân thành công cho đến trước ngày thi đấu thì không được duyệt.</p>
+          <p>5. Khi ngoại lệ phát sinh, các thành viên phải thông báo cho một trong các đối tượng sau: Hội đồng quản trị của Vua phủi miền Nam: ông Nguyễn Trường Xuân Thịnh, ông Phan Vĩnh Lộc và tổng giám đốc CLB - Ông Nguyễn Hoàng Phúc</p>
+          <p>6. Để tạo điều kiện cho anh em thoải mái về mặt tinh thần, Hội đồng quản trị đã thống nhất tỷ lệ duyệt tất cả ngoại lệ nêu trên (nếu còn số lượng (TỐI ĐA hiện nay là 18 người một trận cầu)</p>
+          <p>7. Ngoài các trường hợp nêu trên, Hội đồng quản trị và TGĐ sẽ không giải quyết các vấn đề phát sinh để đảm bảo cho suất thi đấu của các thành viên đủ tiêu chuẩn.</p>
+        </div>
+      </div>
+
+      <div id="tab2" class="tab" onclick="showTab('tab2')">
+        <h2>abc</h2>
+        <div class="tab-content">
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <div></div>
+  </main>
+
+  <script>
+    function showTab(tabName) {
+      var selectedTabContent = document.getElementById(tabName);
+      var isActive = selectedTabContent.classList.contains('active');
+
+      if (isActive) {
+        selectedTabContent.classList.remove('active');
+      } else {
+        selectedTabContent.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>

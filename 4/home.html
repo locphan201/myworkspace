@@ -4,11 +4,6 @@
   <link rel="stylesheet" href="styles.css">
   <meta charset="UTF-8">
   <title>Homepage - Vua Phui Mien Nam</title>
-  <style>
-    #container {
-      margin: 100px 0;
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -20,9 +15,7 @@
     <nav>
       <ul>
         <li class="selected"><a href="home.html">Home</a></li>
-        <li><a href="media.html">Media</a></li>
-        <li><a href="highlights.html">Highlights</a></li>
-        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="rules.html">Rules</a></li>
       </ul>
     </nav>
     <div></div>
@@ -31,18 +24,86 @@
   <main>
     <div></div>
     <div id="container">
-      <h2>Chào mừng đến với Vua Phủi Miền Nam</h2>
-      <p>Đội bóng của lớp 12A11, được thành lập vào năm 2019, là một đội bóng đầy nhiệt huyết và tài năng, gồm các thành viên là những học sinh trung học cấp 3. Với tình yêu và đam mê bóng đá, các thành viên trong đội đã quyết định hợp lực thành lập một đội bóng trường để thể hiện khả năng của mình và tạo nên những trận đấu đầy kịch tính.</p>
-      <p>Từ những ngày đầu thành lập, đội bóng của lớp 12A11 đã trải qua nhiều buổi tập luyện và đặt mục tiêu cao cả. Nhờ sự cống hiến và nỗ lực không ngừng, đội bóng đã tiến bộ rõ rệt và trở thành một đối thủ đáng gờm trong giải đấu của trường.</p>
-      <p>Các thành viên trong đội không chỉ có kỹ thuật điêu luyện, mà còn có tinh thần đồng đội cao. Họ luôn hỗ trợ và khích lệ lẫn nhau trong quá trình thi đấu và tập luyện. Sự gắn kết và sự đoàn kết này giúp đội bóng 12A11 trở thành một gia đình thứ hai đầy ấm áp và hỗ trợ lẫn nhau trong mọi thử thách.</p>
-      <p>Trải qua nhiều trận đấu và giải đấu, đội bóng của lớp 12A11 đã gặt hái được nhiều thành công và ghi dấu ấn trong lịch sử của trường. Bên cạnh sự phát triển cá nhân, các thành viên trong đội còn rèn luyện các kỹ năng quan trọng như lãnh đạo, sự tự tin và khả năng làm việc nhóm.</p>
-      <p>Đội bóng của lớp 12A11 không chỉ là một đội bóng trường học, mà còn là biểu tượng của sự đoàn kết, tinh thần thể thao và sự cống hiến. Với những giờ tập luyện và những trận đấu đầy cảm xúc, đội bóng đã tạo nên những kỷ niệm đáng nhớ và gắn bó vững chắc giữa các thành viên.</p>
+      <div id="tab1" class="tab" onclick="showTab('tab1')">
+        <h2>Chào mừng đến với Vua Phủi Miền Nam</h2>
+        <div class="tab-content">
+          <p>Đội bóng của lớp 12A11, được thành lập vào năm 2019, là một đội bóng đầy nhiệt huyết và tài năng, gồm các thành viên là những học sinh trung học cấp 3. Với tình yêu và đam mê bóng đá, các thành viên trong đội đã quyết định hợp lực thành lập một đội bóng trường để thể hiện khả năng của mình và tạo nên những trận đấu đầy kịch tính.</p>
+          <p>Từ những ngày đầu thành lập, đội bóng của lớp 12A11 đã trải qua nhiều buổi tập luyện và đặt mục tiêu cao cả. Nhờ sự cống hiến và nỗ lực không ngừng, đội bóng đã tiến bộ rõ rệt và trở thành một đối thủ đáng gờm trong giải đấu của trường.</p>
+          <p>Các thành viên trong đội không chỉ có kỹ thuật điêu luyện, mà còn có tinh thần đồng đội cao. Họ luôn hỗ trợ và khích lệ lẫn nhau trong quá trình thi đấu và tập luyện. Sự gắn kết và sự đoàn kết này giúp đội bóng 12A11 trở thành một gia đình thứ hai đầy ấm áp và hỗ trợ lẫn nhau trong mọi thử thách.</p>
+          <p>Trải qua nhiều trận đấu và giải đấu, đội bóng của lớp 12A11 đã gặt hái được nhiều thành công và ghi dấu ấn trong lịch sử của trường. Bên cạnh sự phát triển cá nhân, các thành viên trong đội còn rèn luyện các kỹ năng quan trọng như lãnh đạo, sự tự tin và khả năng làm việc nhóm.</p>
+          <p>Đội bóng của lớp 12A11 không chỉ là một đội bóng trường học, mà còn là biểu tượng của sự đoàn kết, tinh thần thể thao và sự cống hiến. Với những giờ tập luyện và những trận đấu đầy cảm xúc, đội bóng đã tạo nên những kỷ niệm đáng nhớ và gắn bó vững chắc giữa các thành viên.</p>
+        </div>
+      </div>
+
+      <div id="tab2" class="tab" onclick="showTab('tab2')" style="display: none;">
+        <h2>Truyền Thông</h2>
+        <div class="tab-content">
+          <p></p>
+        </div>
+      </div>
+
+      <div id="tab3" class="tab" onclick="openPlaylist()">
+        <h2>Highlights</h2>
+      </div>
+
+      <div id="tab4" class="tab" onclick="openRules()">
+        <h2>Nội quy</h2>
+      </div>
+
+      <div id="tab5" class="tab" onclick="showTab('tab5')">
+        <h2>Lịch sử</h2>
+        <div class="tab-content">
+          <p>Đội bóng lớp 12A11 được thành lập vào năm 2019 với sự tham gia của các học sinh trung học cấp 3. Từ những ngày đầu thành lập, đội bóng đã trải qua nhiều buổi tập luyện và cùng nhau đặt mục tiêu cao cả. Với sự cống hiến và nỗ lực không ngừng, đội bóng đã tiến bộ rõ rệt và trở thành một đối thủ đáng gờm trong các giải đấu của trường. Qua nhiều trận đấu và giải đấu, đội bóng 12A11 đã gặt hái được nhiều thành công và ghi dấu ấn trong lịch sử của trường. Bên cạnh đó, các thành viên trong đội cũng rèn luyện các kỹ năng quan trọng như lãnh đạo, sự tự tin và khả năng làm việc nhóm.</p>
+        </div>
+      </div>
+
+      <div id="tab6" class="tab" onclick="showTab('tab6')">
+        <h2>Về chúng tôi</h2>
+        <div class="tab-content">
+          <div class="team-members">
+            <p>Đội bóng lớp 12A11 không chỉ là một đội bóng trường học, mà còn là biểu tượng của sự đoàn kết, tinh thần thể thao và sự cống hiến. Với những giờ tập luyện và những trận đấu đầy cảm xúc, đội bóng đã tạo nên những kỷ niệm đáng nhớ và gắn bó vững chắc giữa các thành viên. Chúng tôi luôn hỗ trợ và khích lệ lẫn nhau trong quá trình thi đấu và tập luyện, tạo ra một gia đình thứ hai đầy ấm áp và đoàn kết.</p>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);">
+              <div class="team-member">
+                <img src="https://cdn-icons-png.flaticon.com/512/166/166344.png" alt="Member 1">
+                <h3>Hoàng Phúc</h3>
+              </div>
+              <div class="team-member">
+                <img src="https://cdn-icons-png.flaticon.com/512/166/166344.png" alt="Member 2">
+                <h3>Xuân Thịnh</h3>
+              </div>
+              <div class="team-member">
+                <img src="https://cdn-icons-png.flaticon.com/512/166/166344.png" alt="Member 2">
+                <h3>Vĩnh Lộc</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
+    
     <div></div>
   </main>
 
   <script>
-    
+    function openPlaylist() {
+      window.open("https://youtube.com/playlist?list=PLa97VbLW9iGEUx6KLpeBhqaKQrG9NFB8x", "_blank");
+    }
+
+    function openRules() {
+      window.location.href = "rules.html";
+    }
+
+    function showTab(tabName) {
+      var selectedTabContent = document.getElementById(tabName);
+      var isActive = selectedTabContent.classList.contains('active');
+
+      if (isActive) {
+        selectedTabContent.classList.remove('active');
+      } else {
+        selectedTabContent.classList.add('active');
+      }
+    }
   </script>
 </body>
 </html>
