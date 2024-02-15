@@ -1,3 +1,15 @@
+import { create, read, update, remove } from "./firebase.js"
+
+const wishlistFormTitle = document.getElementById("wishlist-title");
+const wishlistFormType = document.getElementById("wishlist-type");
+const wishlistCreateBtn = document.querySelectorAll("#add-page form button")[1];
+
+const tabBtns = document.querySelectorAll("#wishlist-page .btn-grid button");
+const eventTab = document.querySelector("#add-page #event-btn");
+const wishlistTab = document.querySelector("#add-page #wishlist-btn");
+const eventForm = document.querySelector("#add-page #event-form");
+const wishlistForm = document.querySelector("#add-page #wishlist-form")
+
 const foodTab = document.getElementById("food-btn");
 const placeTab = document.getElementById("place-btn");
 const activityTab = document.getElementById("activity-btn");
@@ -8,70 +20,6 @@ const activityList = document.getElementById("activity-list");
 
 const searchInput = document.getElementById("searchInput");
 
-const popUp = document.getElementById("pop-up");
-const wishForm = document.getElementById("wish-form");
-const wishFormTitle = document.getElementById("wishlist-title");
-const wishFormType = document.getElementById("wishlist-type");
-const deleteBtn = document.getElementById("delete-btn");
-
-function tabBtnClicked(btn) {
-    if (btn == "food") {
-        foodTab.classList.add("selected");
-        placeTab.classList.remove("selected");
-        activityTab.classList.remove("selected");
-
-        foodList.style.display = "grid";
-        placeList.style.display = "none";
-        activityList.style.display = "none";
-    } else if (btn == "place") {
-        foodTab.classList.remove("selected");
-        placeTab.classList.add("selected");
-        activityTab.classList.remove("selected");
-
-        foodList.style.display = "none";
-        placeList.style.display = "grid";
-        activityList.style.display = "none";
-    } else if (btn == "activity") {
-        foodTab.classList.remove("selected");
-        placeTab.classList.remove("selected");
-        activityTab.classList.add("selected");
-
-        foodList.style.display = "none";
-        placeList.style.display = "none";
-        activityList.style.display = "grid";
-    }
-}
-
-function loadWishList() {
-    fetch("./api/wishlist/")
-        .then(response => response.json())
-        .then(data => {
-            const wishes = data.wishlist;
-            Object.keys(wishes).forEach(key => {
-                const wishElement = document.createElement("p");
-                wishElement.innerHTML = `
-                    <p>${wishes[key].title}</p>
-                `;
-
-                wishElement.addEventListener("click", () => {
-                    popUp.style.display = "block";
-                    deleteBtn.setAttribute("onclick", `deleteWishForm("${key}")`);
-                    wishFormTitle.value = wishes[key].title;
-                    wishFormType.value = wishes[key].type;
-                });
-
-                if (wishes[key].type == "food") {
-                    foodList.appendChild(wishElement);
-                } else if (wishes[key].type == "place") {
-                    placeList.appendChild(wishElement);
-                } else if (wishes[key].type == "activity") {
-                    activityList.appendChild(wishElement);
-                }
-            });   
-            setupSearch();
-        })
-        .catch(error => error)
-}
 
 function setupSearch() {
     const foodItems = foodList.querySelectorAll("p");
@@ -94,28 +42,126 @@ function setupSearch() {
     });
 }
 
-function cancelWishForm() {
-    event.preventDefault();
-    popUp.style.display = "none";
-}
+async function loadWishlist() {
+    const wishes = await read("wishlist");
 
-function deleteWishForm(wishID) {
-    event.preventDefault();
+    if (wishes == null) {
+        return;
+    }
 
-    fetch(`./api/wishlist/${wishID}`, { method: "DELETE" })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Failed to delete event!");
+    Object.keys(wishes).forEach(key => {
+        const wishElement = document.createElement("p");
+        wishElement.innerHTML = `
+            <p>${wishes[key].title}</p>
+        `;
+
+        wishElement.addEventListener("click", () => {
+            wishlistFormTitle.value = wishes[key].title;
+            wishlistFormType.value = wishes[key].type;
+            const wishlistIcon = document.querySelectorAll("#navBar span")[3];
+            const tabs = document.querySelectorAll(".content");
+
+            wishlistIcon.classList.remove("selected");
+            tabs[3].classList.remove("show");
+            tabs[2].classList.add("show");
+
+            eventTab.classList.remove("selected");
+            eventForm.style.display = "none";
+            wishlistTab.classList.add("selected");
+            wishlistForm.style.display = "block";
+            eventForm.reset();
+        });
+
+        if (wishes[key].type == "food") {
+            foodList.appendChild(wishElement);
+        } else if (wishes[key].type == "place") {
+            placeList.appendChild(wishElement);
+        } else if (wishes[key].type == "activity") {
+            activityList.appendChild(wishElement);
         }
-        return response.json();
-    })
-    .then(data => {
-        alert(data.message);
-        window.location.reload();
-    })
-    .catch(error => {
-        alert(error.message);
-    });
+    });   
+    setupSearch();
 }
 
-// loadWishList();
+wishlistCreateBtn.addEventListener("click", async () => {
+    event.preventDefault();
+    const wishTitle = wishlistFormTitle.value;
+    const wishType = wishlistFormType.value;
+
+    const result = await create("wishlist", {
+        title: wishTitle,
+        type: wishType
+    });
+
+    if (result == false) {
+        alert("Cannot create new wish!");
+        return;
+    }
+
+    const wishElement = document.createElement("p");
+    wishElement.innerHTML = `
+        <p>${wishlistFormTitle.value}</p>
+    `;
+
+    wishElement.addEventListener("click", () => {
+        wishlistFormTitle.value = wishTitle;
+        wishlistFormType.value = wishType;
+        const wishlistIcon = document.querySelectorAll("#navBar span")[3];
+        const tabs = document.querySelectorAll(".content");
+
+        wishlistIcon.classList.remove("selected");
+        tabs[3].classList.remove("show");
+        tabs[2].classList.add("show");
+
+        eventTab.classList.remove("selected");
+        eventForm.style.display = "none";
+        wishlistTab.classList.add("selected");
+        wishlistForm.style.display = "block";
+        eventForm.reset();
+    });
+
+    if (wishlistFormType.value == "food") {
+        foodList.appendChild(wishElement);
+    } else if (wishlistFormType.value == "place") {
+        placeList.appendChild(wishElement);
+    } else if (wishlistFormType.value == "activity") {
+        activityList.appendChild(wishElement);
+    }
+
+    wishlistFormTitle.value = "";
+
+    alert("Successfully creating new wish!");
+});
+
+
+tabBtns[0].addEventListener("click", () => {
+    foodTab.classList.add("selected");
+    placeTab.classList.remove("selected");
+    activityTab.classList.remove("selected");
+
+    foodList.style.display = "grid";
+    placeList.style.display = "none";
+    activityList.style.display = "none";
+});
+
+tabBtns[1].addEventListener("click", () => {
+    foodTab.classList.remove("selected");
+    placeTab.classList.add("selected");
+    activityTab.classList.remove("selected");
+
+    foodList.style.display = "none";
+    placeList.style.display = "grid";
+    activityList.style.display = "none";
+});
+
+tabBtns[2].addEventListener("click", () => {
+    foodTab.classList.remove("selected");
+    placeTab.classList.remove("selected");
+    activityTab.classList.add("selected");
+
+    foodList.style.display = "none";
+    placeList.style.display = "none";
+    activityList.style.display = "grid";
+});
+
+await loadWishlist();

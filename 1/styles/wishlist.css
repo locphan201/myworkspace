@@ -20,24 +20,24 @@
     border: 1px solid black;
 }
 
-#food-list,
-#place-list,
-#activity-list {
+#wishlist-page #food-list,
+#wishlist-page #place-list,
+#wishlist-page #activity-list {
     margin: 10px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
-#food-list p,
-#place-list p,
-#activity-list p {
+#wishlist-page #food-list p,
+#wishlist-page #place-list p,
+#wishlist-page #activity-list p {
     padding: 0;
     margin: 0;
     font-size: 1.25rem;
 }
 
-#searchInput {
+#wishlist-page #searchInput {
     padding: 10px;
     margin: 10px;
     max-width: 400px;

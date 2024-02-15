@@ -1,6 +1,11 @@
 const tabIcons = document.querySelectorAll("#navBar span");
 const tabs = document.querySelectorAll(".content");
 
+const eventTab = document.querySelector("#add-page #event-btn");
+const wishlistTab = document.querySelector("#add-page #wishlist-btn");
+const eventForm = document.querySelector("#add-page #event-form");
+const wishlistForm = document.querySelector("#add-page #wishlist-form");
+
 function removeAllSelected() {
     tabIcons.forEach(element => {
         element.classList.remove("selected");
@@ -34,3 +39,18 @@ tabIcons.forEach(element => {
     });
 });
 
+eventTab.addEventListener("click", () => {
+    eventTab.classList.add("selected");
+    eventForm.style.display = "block";
+    wishlistTab.classList.remove("selected");
+    wishlistForm.style.display = "none";
+    wishlistForm.reset();
+});
+
+wishlistTab.addEventListener("click", () => {
+    eventTab.classList.remove("selected");
+    eventForm.style.display = "none";
+    wishlistTab.classList.add("selected");
+    wishlistForm.style.display = "block";
+    eventForm.reset();
+});

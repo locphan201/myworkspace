@@ -1,11 +1,14 @@
 import { create, read, update, remove } from "./firebase.js"
 
+const eventTab = document.querySelector("#add-page #event-btn");
+const wishlistTab = document.querySelector("#add-page #wishlist-btn");
+const eventForm = document.querySelector("#add-page #event-form");
+const wishlistForm = document.querySelector("#add-page #wishlist-form")
+
 const contentElement = document.getElementById("events-page");
-const popUp = document.getElementById("pop-up");
-const eventForm = document.getElementById("event-form");
 const eventFormTitle = document.getElementById("event-title");
 const eventFormDate = document.getElementById("event-date");
-const deleteBtn = document.getElementById("delete-btn");
+const eventCreateBtn = document.querySelector("#add-page form button");
 
 const months = {
     "01": "Jan", "02": "Feb", "03": "Mar", "04":"Apr",
@@ -13,14 +16,22 @@ const months = {
     "09": "Sep", "10": "Oct", "11": "Nov", "12":"Dec",
 }
 
-async function loadEvents() {
+var eventList = {};
+
+async function getEvents() {
     const eventsData = await read("events");
 
     if (eventsData == null) {
-        return;
+        return {};
     }
 
-    const sortedEvents = Object.entries(eventsData)
+    eventList = eventsData
+}
+
+async function loadEvents() {
+    contentElement.innerHTML = "";
+
+    const sortedEvents = Object.entries(eventList)
         .sort(([, a], [, b]) => new Date(a.date) - new Date(b.date))
         .map(([key, value]) => ({ id: key, ...value }));
     
@@ -40,19 +51,47 @@ async function loadEvents() {
         eventElement.appendChild(eventDate);
 
         eventElement.addEventListener("click", () => {
-            popUp.style.display = "block";
-            deleteBtn.setAttribute("onclick", `deleteEventForm("${item.id}")`);
             eventFormTitle.value = item.title;
             eventFormDate.value = item.date;
+            const eventIcon = document.querySelectorAll("#navBar span")[1];
+            const tabs = document.querySelectorAll(".content");
+
+            eventIcon.classList.remove("selected");
+            tabs[1].classList.remove("show");
+            tabs[2].classList.add("show");
+
+            eventTab.classList.add("selected");
+            eventForm.style.display = "block";
+            wishlistTab.classList.remove("selected");
+            wishlistForm.style.display = "none";
+            wishlistForm.reset();
         });
 
         contentElement.appendChild(eventElement);
     });
 }
 
-function cancelEventForm() {
+eventCreateBtn.addEventListener("click", async () => {
     event.preventDefault();
-    popUp.style.display = "none";
-}
+    const result = await create("events", {
+        title: eventFormTitle.value,
+        date: eventFormDate.value
+    });
 
+    if (result == false) {
+        alert("Cannot create new event!");
+        return;
+    }
+
+    eventList[result] = {
+        title: eventFormTitle.value,
+        date: eventFormDate.value
+    } 
+    loadEvents();
+    eventFormTitle.value = "";
+    eventFormDate.value = "";
+    alert("Successfully creating new event!");
+});
+
+await getEvents();
 loadEvents();

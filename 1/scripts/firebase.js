@@ -20,8 +20,8 @@ const database = getDatabase(app);
 async function create(path, data) {
     try {
         const tempRef = ref(database, path);
-        await push(tempRef, data);
-        return true;
+        const newRef = await push(tempRef, data);
+        return newRef.key;
     } catch (error) {
         console.error('Error creating data', error);
         return false;
