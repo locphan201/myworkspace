@@ -1,0 +1,8 @@
+#youtube-img {
+    width: 80%;
+    height: auto;
+    padding: 5px;
+    margin-top: 10px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}

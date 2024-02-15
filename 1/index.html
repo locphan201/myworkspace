@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="./styles/events.css"> 
   <link rel="stylesheet" href="./styles/add.css">
   <link rel="stylesheet" href="./styles/wishlist.css">
+  <link rel="stylesheet" href="./styles/music.css">
 
   <title>You And Me</title>
 </head>
@@ -30,6 +31,7 @@
       <div class="btn-grid">
         <button id="event-btn" class="form-btn selected">Events</button>
         <button id="wishlist-btn" class="form-btn">Wishlist</button>
+        <button id="music-btn" class="form-btn">Music</button>
       </div>
 
       <form id="event-form">
@@ -51,6 +53,14 @@
         </select><br>
         <button>Create New Wishlist</button>
       </form>
+
+      <form id="music-form" style="display: none;">
+        <label for="music-title">Title</label>
+        <input type="text" name="music-title" id="music-title" required><br>
+        <label for="music-url">URL</label>
+        <input type="text" name="music-url" id="music-url" required><br>
+        <button>Create New Music</button>
+      </form>
     </div>
 
     <div id="wishlist-page" class="content">
@@ -67,20 +77,25 @@
       <div id="activity-list" class="content-list" style="display: none;"></div>
     </div>
 
-    <div id="settings-page" class="content"></div>
+    <div id="music-page" class="content">
+      <img id="youtube-img" src="https://www.techsmith.com/blog/wp-content/uploads/2021/02/video-thumbnails-social.png" alt="thumbnail">
+      <marquee behavior="scroll" direction="left" scrollamount="1" >
+        <h3 id="youtube-title">N/A - Various Artists</h3>
+      </marquee>
+      <audio id="youtube-audio" controls>
+        <source src="https://www.youtube.com/watch?v=Qn48VP3GNYk" type="audio/mp4">
+      </audio>
+      <div id="music-list"></div>
+    </div>
 
     <div id="navBar">
       <span class="material-symbols-outlined selected">home</span>
       <span class="material-symbols-outlined">event</span>
       <span class="material-symbols-outlined mid">add</span>
       <span class="material-symbols-outlined">favorite</span>
-      <span class="material-symbols-outlined">manage_accounts</span>
+      <span class="material-symbols-outlined">library_music</span>
     </div>
   </div>
-
-  
-      
-
 
   <!-- 
     <div style="display:flex;justify-content:flex-end;gap:10px;">
@@ -97,6 +112,6 @@
   <script type="module" src="./scripts/events.js"></script>
   <script type="module" src="./scripts/add.js"></script>
   <script type="module" src="./scripts/wishlist.js"></script>
-  <script type="module" src="./scripts/settings.js"></script>
+  <script type="module" src="./scripts/music.js"></script>
 </body>
 </html>

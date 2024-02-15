@@ -3,8 +3,10 @@ const tabs = document.querySelectorAll(".content");
 
 const eventTab = document.querySelector("#add-page #event-btn");
 const wishlistTab = document.querySelector("#add-page #wishlist-btn");
+const musicTab = document.querySelector("#add-page #music-btn");
 const eventForm = document.querySelector("#add-page #event-form");
 const wishlistForm = document.querySelector("#add-page #wishlist-form");
+const musicForm = document.querySelector("#add-page #music-form");
 
 function removeAllSelected() {
     tabIcons.forEach(element => {
@@ -31,8 +33,8 @@ tabIcons.forEach(element => {
         } else if (element.textContent == "favorite") {
             document.getElementById("title").textContent = "Wishlist";
             tabs[3].classList.add("show");
-        } else if (element.textContent == "manage_accounts") {
-            document.getElementById("title").textContent = "Settings";
+        } else if (element.textContent == "library_music") {
+            document.getElementById("title").textContent = "Library";
             tabs[4].classList.add("show");
         }
         element.classList.add("selected");
@@ -44,7 +46,11 @@ eventTab.addEventListener("click", () => {
     eventForm.style.display = "block";
     wishlistTab.classList.remove("selected");
     wishlistForm.style.display = "none";
+    musicTab.classList.remove("selected");
+    musicForm.style.display = "none";
+
     wishlistForm.reset();
+    musicForm.reset();
 });
 
 wishlistTab.addEventListener("click", () => {
@@ -52,5 +58,22 @@ wishlistTab.addEventListener("click", () => {
     eventForm.style.display = "none";
     wishlistTab.classList.add("selected");
     wishlistForm.style.display = "block";
+    musicTab.classList.remove("selected");
+    musicForm.style.display = "none";
+
     eventForm.reset();
+    musicForm.reset();
+});
+
+
+musicTab.addEventListener("click", () => {
+    eventTab.classList.remove("selected");
+    eventForm.style.display = "none";
+    wishlistTab.classList.remove("selected");
+    wishlistForm.style.display = "none";
+    musicTab.classList.add("selected");
+    musicForm.style.display = "block";
+
+    eventForm.reset();
+    wishlistForm.reset();
 });
