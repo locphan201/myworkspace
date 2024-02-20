@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="./styles/add.css">
   <link rel="stylesheet" href="./styles/wishlist.css">
   <link rel="stylesheet" href="./styles/music.css">
+  <script src="https://www.youtube.com/iframe_api"></script>
+
 
   <title>You And Me</title>
 </head>
@@ -78,13 +80,7 @@
     </div>
 
     <div id="music-page" class="content">
-      <img id="youtube-img" src="https://www.techsmith.com/blog/wp-content/uploads/2021/02/video-thumbnails-social.png" alt="thumbnail">
-      <marquee behavior="scroll" direction="left" scrollamount="1" >
-        <h3 id="youtube-title">N/A - Various Artists</h3>
-      </marquee>
-      <audio id="youtube-audio" controls>
-        <source src="https://www.youtube.com/watch?v=Qn48VP3GNYk" type="audio/mp4">
-      </audio>
+      <iframe id="youtube-player" width="auto" height="30%" src="https://www.youtube.com/embed/x_3XuwB9S5I?si=QF2jnbq8VHY512Ex" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       <div id="music-list"></div>
     </div>
 

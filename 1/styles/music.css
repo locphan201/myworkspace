@@ -1,8 +1,8 @@
-#youtube-img {
-    width: 80%;
+#youtube-player {
+    width: 100%;
     height: auto;
-    padding: 5px;
-    margin-top: 10px;
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+}
+
+#music-list {
+    overflow-y: scroll;
 }
